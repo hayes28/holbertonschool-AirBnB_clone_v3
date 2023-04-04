@@ -28,11 +28,11 @@ classes = {"Amenity": Amenity, "City": City,
 class DBStorage:
     """Interacts with a MySQL database to store and retrieve objects.
 
-    This class is responsible for managing the connection to a MySQL database
-    and providing methods for interacting with the data stored in the database.
-    It defines methods for querying, adding, deleting, and saving objects in the
-    database, as well as loading data from the database and handling database
-    sessions.
+    This class is responsible for managing the connection to a MySQL
+    database and providing methods for interacting with the data stored
+    in the database. It defines methods for querying, adding, deleting,
+    and saving objects in the database, as well as loading data from the
+    database and handling database sessions.
     """
     __engine = None
     __session = None
@@ -77,8 +77,9 @@ class DBStorage:
     def new(self, obj):
         """Adds an object to the current database session.
 
-        This method adds a new object to the current database session. The
-        object is not saved to the database until the save() method is called.
+        This method adds a new object to the current database session.
+        The object is not saved to the database until the save()
+        method is called.
         """
         self.__session.add(obj)
 
