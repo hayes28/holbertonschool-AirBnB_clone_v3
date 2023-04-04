@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """View for cities objects; handles defualt RESTFul API actions"""
 
