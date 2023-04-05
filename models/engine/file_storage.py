@@ -39,10 +39,10 @@ class FileStorage:
 
     def all(self, cls=None):
         """Returns a dictionary of all objects stored in the file.
-
-        This method returns a dictionary mapping object IDs to the corresponding
-        objects for all objects stored in the file. If a class is specified,
-        it returns a dictionary of all objects of that class only.
+        This method returns a dictionary mapping object IDs to the
+        corresponding objects for all objects stored in the file.
+        If a class is specified,it returns a dictionary of all
+        objects of that class only.
         """
         if cls is not None:
             new_dict = {}
@@ -54,21 +54,19 @@ class FileStorage:
 
     def new(self, obj):
         """Adds a new object to the dictionary of objects stored in the file.
-
-        This method adds a new object to the dictionary of objects stored in the
-        file. It uses the object's class name and ID to create a key for the
-        dictionary entry.
+        This method adds a new object to the dictionary of objects stored
+        in the file. It uses the object's class name and ID to create a key
+        for the dictionary entry.
         """
         if obj is not None:
             key = obj.__class__.__name__ + "." + obj.id
             self.__objects[key] = obj
 
     def save(self):
-        """Serializes all objects to the JSON file.
-
-        This method serializes all objects in the dictionary of objects stored
-        in the file to a JSON-formatted string and writes the string to the file
-        specified by __file_path.
+        """Serializes all objects to the JSON file. This method
+        serializes all objects in the dictionary of objects stored
+        in the file to a JSON-formatted string and writes the string
+        to the file specified by __file_path.
         """
         json_objects = {}
         for key in self.__objects:
@@ -92,7 +90,7 @@ class FileStorage:
             pass
 
     def delete(self, obj=None):
-        """delete obj from __objects if it’s inside"""
+        """delete obj from __objects if its inside"""
         if obj is not None:
             key = obj.__class__.__name__ + '.' + obj.id
             if key in self.__objects:
