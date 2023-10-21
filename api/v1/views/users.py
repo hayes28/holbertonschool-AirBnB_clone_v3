@@ -53,7 +53,7 @@ def get_users(user_id=None):
             return make_response(jsonify({'error': 'Not a JSON'}), 400)
 
         for key, val in user_data.items():
-            if key != 'id' and key != 'created_at' and key != 'updated_at':
+            if key not in ['id', 'created_at', 'updated_at']:
                 setattr(user_update, key, val)
         storage.save()
         return make_response(jsonify(user_update.to_dict()), 200)

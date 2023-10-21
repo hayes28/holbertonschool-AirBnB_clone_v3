@@ -89,8 +89,6 @@ class TestFileStorage(unittest.TestCase):
 
     def test_get(self):
         """ Test that get properly gets object from storage """
-        if models.storage_t != 'db':
-            pass
         test_state_1 = State(name="Joshter")
         test_state_1.save()
         test_state_2 = models.storage.get(State, test_state_1.id)
@@ -101,8 +99,6 @@ class TestFileStorage(unittest.TestCase):
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_count(self):
         """ Test that count properly counts  number of objects in storage """
-        if models.storage_t != 'db':
-            pass
         state_count = models.storage.count(State)
         total_count = models.storage.count()
         new_state = State(name="count_state")

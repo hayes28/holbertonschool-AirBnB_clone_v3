@@ -12,8 +12,8 @@ def get_amenities(state_id=None):
     """retrieves all states, by id"""
     amenities = storage.all(Amenity)
 
-    if request.method == 'GET':
-        if state_id is None:
+    if state_id is None:
+        if request.method == 'GET':
             return jsonify([amenity.to_dict()
                             for amenity in amenities.values()])
 
